@@ -84,11 +84,26 @@ const monBouton = document.querySelector(".monBouton")
 
 
 monBouton.addEventListener("click", ()=>{
-    //trouve le moyen    de vérifier si l'utilisateur n'a pas utilisé le mot quiche
+    //trouve le moyen de vérifier si l'utilisateur n'a pas utilisé le mot quiche
     // si c'est le cas, on n'accepter pas sa phrase, et on la remplace par
     // désolé "quiche" n'est pas un mot autorisé
+    let laPhraseAAfficher = monChampTexte.value
+    let lesMots = laPhraseAAficher.split(" ")
+     let containsTarget =  lesMots.includes("quiche")
+    let laPhraseErreur = "désolé on ne veut pas de ce mot ici"
 
-    maBoiteAChoucroute.innerHTML += ("<p>"+monChampTexte.value+"</p>")
+    //si containsTarget est true alors on ecrit "déso non"
+
+    if( lesMots.includes("quiche") ){ laPhraseAAficher = laPhraseErreur }
+
+
+
+        maBoiteAChoucroute.innerHTML += ("<p>"+laPhraseAAficher+"</p>")
+
+    //sinon on met la laPhrase dans la boite à choucroute
+
+
+
     monChampTexte.value = ""
 } )
 
